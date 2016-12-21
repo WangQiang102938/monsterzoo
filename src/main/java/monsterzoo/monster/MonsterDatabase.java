@@ -12,7 +12,11 @@ public class MonsterDatabase extends Monsters{
     public Monster encounter(MonsterZooField field){
         RandomValue index = field.next(
                 monsters.size());
-        return monsters.get(index.toInteger());
+        return encounter(index.toInteger());
+    }
+
+    private Monster encounter(int index){
+        return monsters.get(index);        
     }
 
     private void register(String name, int rarity){
@@ -20,8 +24,7 @@ public class MonsterDatabase extends Monsters{
     }
 
     /**
-     * ここを3行以内にしようと思うと，設定ファイルの読み込み等が必要になる．
-     * 今回は面倒なので，そのまま書く．
+     * ここを3行以内にしようと思うと，設定ファイルの読み込み等が必要になる．今回は面倒なので，そのまま書く．
      */
     private void initialize(){
         register("イガキン", 9);

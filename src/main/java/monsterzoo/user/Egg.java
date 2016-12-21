@@ -5,7 +5,8 @@ import monsterzoo.field.Distance;
 public class Egg{
     public static final Distance DEFAULT_INCUBATION = new Distance(3.0);
 
-    private Distance incubation;
+    private Distance incubation = new Distance(0);
+    private Distance current = new Distance(0);
 
     public Egg(){
         this(DEFAULT_INCUBATION);
@@ -16,15 +17,16 @@ public class Egg{
     }
 
     public void walk(Distance distance){
-        incubation = incubation.countdown(distance);
+        current = current.add(distance);
     }
 
     public boolean isIncubated(){
-        return incubation.compareTo(new Distance(0)) < 0;
+        return incubation.compareTo(current) <= 0;
     }
 
     @Override
     public String toString(){
-        return String.format("卵(あと%s km)", incubation);
+        return String.format("卵(あと%s km)", 
+                incubation.difference(current));
     }
 }

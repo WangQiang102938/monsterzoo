@@ -7,8 +7,8 @@ import monsterzoo.Listeners;
 import monsterzoo.Name;
 
 public class Goods extends Listeners<GoodsEmptyListener>{
-    public static Name BALL   = new Name("ボール");
-    public static Name FRUITE = new Name("フルーツ");
+    public static final Name BALL   = new Name("ボール");
+    public static final Name FRUITE = new Name("フルーツ");
 
     private Map<Name, Count> goods = new HashMap<>();
 

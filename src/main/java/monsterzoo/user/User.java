@@ -1,5 +1,7 @@
 package monsterzoo.user;
 
+import static monsterzoo.user.Goods.BALL;
+
 import java.util.function.Consumer;
 
 import monsterzoo.Name;
@@ -13,7 +15,7 @@ public class User {
     private Monsters monsters = new Monsters();
 
     public User(){
-        bag.add(Goods.BALL, new Count(10));
+        bag.add(BALL, new Count(10));
     }
 
     public void add(Egg egg){
@@ -53,7 +55,8 @@ public class User {
     }
 
     public Distance walk(Distance distance){
-        bag.forEggs(egg -> egg.walk(distance));
+        bag.forEggs(
+                egg -> egg.walk(distance));
         return distance;
     }
 }

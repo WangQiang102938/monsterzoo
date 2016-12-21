@@ -45,8 +45,13 @@ public class Battle {
 
     private Rarity drawLots(){
         int bonus = use(FRUITE, new Message("フルーツを投げた！捕まえやすさが倍になる！"));
-        RandomValue value = field.next(6).times(bonus);
-        return value.toRarity();
+        RandomValue value = field.next(6);
+        return times(value, bonus);
+    }
+
+    private Rarity times(RandomValue value, int bonus){
+        RandomValue result = value.times(bonus);
+        return result.toRarity();
     }
 
     private int use(Name name, Message message){
@@ -56,7 +61,7 @@ public class Battle {
     }
 
     private int useImpl(Name name, Message message){
-        field.addMessage(message);
+        field.pushMessage(message);
         user.use(name);
         return 2;
     }

@@ -16,7 +16,8 @@ public class Listeners<T> {
     }
 
     /**
-     * listeners.fire(source, (listener, source) -> listener.event(source));
+     * listeners.fire(source,
+     *         (listener, source) -> listener.event(source));
      */
     public <E> void fire(E source, BiConsumer<T, E> action){
         listeners.forEach(

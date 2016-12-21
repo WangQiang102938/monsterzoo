@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Field extends GameContinueFlag{
     private Random random = new Random();
-    private MessageQueue queue = new MessageQueue();
+    private MessageCenter queue = new MessageCenter();
 
     public RandomValue next(){
         return next(10);
@@ -18,11 +18,11 @@ public class Field extends GameContinueFlag{
         queue.println();
     }
 
-    public void addMessage(Message message){
+    public void pushMessage(Message message){
         queue.add(message);
     }
 
     public void addMessage(String message){
-        this.addMessage(new Message(message));
+        this.pushMessage(new Message(message));
     }
 }

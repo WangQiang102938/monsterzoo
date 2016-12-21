@@ -42,7 +42,7 @@ public class MonsterZooField extends Field{
     }
 
     private void registerMessage(User user, Distance distance){
-        addMessage(user.statusMessage());
+        pushMessage(user.statusMessage());
         addMessage(distance + "km歩いた．");
     }
 }
