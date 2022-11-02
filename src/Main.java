@@ -1,7 +1,5 @@
 
 public class Main {
-	static MonsterZoo pz = new MonsterZoo();
-
 	public static void main(String[] args) {
 
 		Utils.Box.push("Game Start");
