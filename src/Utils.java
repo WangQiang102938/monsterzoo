@@ -36,7 +36,7 @@ public class Utils {
             }
         }
 
-        public static final int length = 72;
+        public static final int length = 96;
         public static boolean justPopFlag = false;// match pattern:pop(set to true)->push(split by newline)->print(set
                                                   // to false)
 
