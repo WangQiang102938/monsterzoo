@@ -86,14 +86,11 @@ public class User {
     }
 
     public boolean checkValid() {
-        if (this.balls <= 0) {
-            if (this.alive) {
-                Utils.Box.print(this.name + ":ボールがなくなった！");
-                this.alive = false;
-            }
-            return false;
+        if (this.balls <= 0 && this.alive) {
+            Utils.Box.print(this.name + ":ボールがなくなった！");
+            this.alive = false;
         }
-        return true;
+        return this.alive;
     }
 
     public void printCatchedMonster() {
